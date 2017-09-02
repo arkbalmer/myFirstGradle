@@ -3,6 +3,11 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+}
 sourceCompatibility = 1.8
 
 repositories {
@@ -11,4 +16,22 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+
+task hello {
+    println "Hello World"
+}
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    with jar
 }
