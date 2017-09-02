@@ -8,6 +8,15 @@ public class Book {
     private Date publishingDate;
     private String description;
 
+    public Book() {
+    }
+
+    public Book(String name, Date publishingDate, String description) {
+        this.name = name;
+        this.publishingDate = publishingDate;
+        this.description = description;
+    }
+
     public String getName() {
         return name;
     }
