@@ -31,7 +31,7 @@ Before build
 *   install JDK8
 *   install git
 *   `git clone https://github.com/arkbalmer/myFirstGradle.git`
-*   install PostgreSQL 9.6
+*   install PostgreSQL 9.6 (use port 5433)
 *   create new DB user `book_user`, pass: `redred`
 *   create DataBase `book_db` owned by `book_user`
 
@@ -39,4 +39,10 @@ Build and Run
 -------------
 
     gradle build
+    gradle update
     java -jar build/libs/myGradleBuild-1.0-SNAPSHOT.jar
+
+DataBase Rollback
+-----------------
+
+    gradle rollbackCount -PliquibaseCommandValue=1
