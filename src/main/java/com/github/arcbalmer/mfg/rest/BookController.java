@@ -1,6 +1,6 @@
 package com.github.arcbalmer.mfg.rest;
 
-import com.github.arcbalmer.mfg.Book;
+import com.github.arcbalmer.mfg.dao.entity.Book;
 import com.github.arcbalmer.mfg.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

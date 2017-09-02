@@ -1,11 +1,22 @@
-package com.github.arcbalmer.mfg;
+package com.github.arcbalmer.mfg.dao.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
+@Entity
 public class Book {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private String name;
+
     private Date publishingDate;
+
     private String description;
 
     public Book() {
@@ -15,6 +26,14 @@ public class Book {
         this.name = name;
         this.publishingDate = publishingDate;
         this.description = description;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

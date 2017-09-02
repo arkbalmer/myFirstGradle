@@ -37,6 +37,10 @@ dependencies {
     // tag::actuator[]
     compile("org.springframework.boot:spring-boot-starter-actuator")
     // end::actuator[]
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    //compile("org.postgresql:postgresql:42.1.4")
+    compile("com.h2database:h2")
+
 
     testCompile("junit:junit")
     testCompile('org.springframework.boot:spring-boot-starter-test')

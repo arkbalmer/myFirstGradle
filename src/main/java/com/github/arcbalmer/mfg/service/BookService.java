@@ -1,6 +1,6 @@
 package com.github.arcbalmer.mfg.service;
 
-import com.github.arcbalmer.mfg.Book;
+import com.github.arcbalmer.mfg.dao.entity.Book;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
