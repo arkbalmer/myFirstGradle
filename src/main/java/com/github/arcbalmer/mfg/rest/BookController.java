@@ -2,6 +2,7 @@ package com.github.arcbalmer.mfg.rest;
 
 import com.github.arcbalmer.mfg.Book;
 import com.github.arcbalmer.mfg.service.BookService;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +17,7 @@ public class BookController {
         bookService = new BookService();
     }
 
-    @RequestMapping("/books")
+    @RequestMapping(value = "/books", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public List<Book> getAllBooks() {
         return bookService.getBooks();
     }
