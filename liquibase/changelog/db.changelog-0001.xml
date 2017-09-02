@@ -6,11 +6,17 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
 
     <changeSet author="Alex" id="changelog-0001-001">
-        <createTable tableName="TablesAndTables">
-            <column name="COLUMN1" type="TEXT">
-                <constraints nullable="true" primaryKey="false" unique="false"/>
-            </column>
-        </createTable>
+        <sql>
+            CREATE TABLE book (
+            id SERIAL PRIMARY KEY,
+            name TEXT NOT NULL,
+            publishing_date TIMESTAMP NOT NULL,
+            description TEXT NOT NULL
+            );
+        </sql>
+        <rollback>
+            <dropTable tableName="book"/>
+        </rollback>
     </changeSet>
 
 </databaseChangeLog>
