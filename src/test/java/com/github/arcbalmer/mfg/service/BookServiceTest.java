@@ -1,6 +1,6 @@
 package com.github.arcbalmer.mfg.service;
 
-import com.github.arcbalmer.mfg.dao.entity.Book;
+import com.github.arcbalmer.mfg.dao.entity.BookEntity;
 import com.github.arcbalmer.mfg.dao.repository.BookRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,10 +31,10 @@ public class BookServiceTest {
 
     @Test
     public void shouldFindTwoBooks() {
-        Book b1 = new Book("Hunter1", new Date(150426218), "part#1");
-        Book b2 = new Book("Hunter2", new Date(150426217), "part#2");
+        BookEntity b1 = new BookEntity("Hunter1", new Date(150426218), "part#1");
+        BookEntity b2 = new BookEntity("Hunter2", new Date(150426217), "part#2");
         given(bookRepository.findAll()).willReturn(Arrays.asList(b1, b2));
-        List<Book> listBook = bookService.getBooks();
+        List<BookEntity> listBook = bookService.getBooks();
         assertNotNull(listBook);
         assertEquals(2, listBook.size());
         assertEquals("Hunter1", listBook.get(0).getName());

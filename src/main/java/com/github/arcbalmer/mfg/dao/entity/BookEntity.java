@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class Book {
+public class BookEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,10 +19,10 @@ public class Book {
 
     private String description;
 
-    public Book() {
+    public BookEntity() {
     }
 
-    public Book(String name, Date publishingDate, String description) {
+    public BookEntity(String name, Date publishingDate, String description) {
         this.name = name;
         this.publishingDate = publishingDate;
         this.description = description;

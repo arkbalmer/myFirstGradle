@@ -1,6 +1,6 @@
 package com.github.arcbalmer.mfg.rest;
 
-import com.github.arcbalmer.mfg.dao.entity.Book;
+import com.github.arcbalmer.mfg.dao.entity.BookEntity;
 import com.github.arcbalmer.mfg.service.BookService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,8 +28,8 @@ public class BookControllerTest {
 
     @Test
     public void shouldFindAllBooks() {
-        Book b1 = new Book("Hunter1", new Date(150426218), "part#1");
-        Book b2 = new Book("Hunter2", new Date(150426217), "part#2");
+        BookEntity b1 = new BookEntity("Hunter1", new Date(150426218), "part#1");
+        BookEntity b2 = new BookEntity("Hunter2", new Date(150426217), "part#2");
         given(bookService.getBooks()).willReturn(Arrays.asList(b1, b2));
         String body = restTemplate.getForObject("/books", String.class);
         assertThat(body).isEqualTo("[{\"id\":null,\"name\":\"Hunter1\",\"publishingDate\":150426218,\"description\":\"part#1\"},{\"id\":null,\"name\":\"Hunter2\",\"publishingDate\":150426217,\"description\":\"part#2\"}]");

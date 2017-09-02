@@ -1,6 +1,6 @@
 package com.github.arcbalmer.mfg.rest;
 
-import com.github.arcbalmer.mfg.dao.entity.Book;
+import com.github.arcbalmer.mfg.dao.entity.BookEntity;
 import com.github.arcbalmer.mfg.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -16,7 +16,7 @@ public class BookController {
     private BookService bookService;
 
     @RequestMapping(value = "/books", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public List<Book> getAllBooks() {
+    public List<BookEntity> getAllBooks() {
         return bookService.getBooks();
     }
 
