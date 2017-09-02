@@ -28,10 +28,12 @@ Before build
 ------------
 
 *   install gradle 4.x
-*   install PostgreSQL 9.6
 *   install JDK8
 *   install git
 *   `git clone https://github.com/arkbalmer/myFirstGradle.git`
+*   install PostgreSQL 9.6
+*   create new DB user `book_user`, pass: `redred`
+*   create DataBase `book_db` owned by `book_user`
 
 Build and Run
 -------------
