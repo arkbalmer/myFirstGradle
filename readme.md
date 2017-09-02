@@ -31,7 +31,7 @@ Before build
 *   install PostgreSQL 9.6
 *   install JDK8
 *   install git
-*   git clone https://github.com/arkbalmer/myFirstGradle.git
+*   `git clone https://github.com/arkbalmer/myFirstGradle.git`
 
 Build and Run
 -------------
