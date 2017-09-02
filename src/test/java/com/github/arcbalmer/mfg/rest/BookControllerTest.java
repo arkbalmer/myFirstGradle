@@ -30,8 +30,8 @@ public class BookControllerTest {
     public void shouldFindAllBooks() {
         Book b1 = new Book("Hunter1", new Date(150426218), "part#1");
         Book b2 = new Book("Hunter2", new Date(150426217), "part#2");
-        given(this.bookService.getBooks()).willReturn(Arrays.asList(b1, b2));
-        String body = this.restTemplate.getForObject("/books", String.class);
+        given(bookService.getBooks()).willReturn(Arrays.asList(b1, b2));
+        String body = restTemplate.getForObject("/books", String.class);
         assertThat(body).isEqualTo("[{\"name\":\"Hunter1\",\"publishingDate\":150426218,\"description\":\"part#1\"},{\"name\":\"Hunter2\",\"publishingDate\":150426217,\"description\":\"part#2\"}]");
     }
 
