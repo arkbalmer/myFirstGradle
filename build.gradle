@@ -31,24 +31,5 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
     testCompile('org.springframework.boot:spring-boot-starter-test')
-}
-
-
-task hello {
-    println "Hello World"
-}
-
-task fatJar(type: Jar) {
-    manifest {
-        attributes 'Main-Class': 'Main'
-    }
-
-    from {
-        configurations.compile.collect {
-            it.isDirectory() ? it : zipTree(it)
-        }
-    }
-    with jar
 }
